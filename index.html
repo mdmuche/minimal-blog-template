@@ -4,25 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Minimal-Blog-Template</title>
   </head>
   <body>
     <section id="header-section">
       <header>
         <img src="./assets/images/personally-logo.svg" alt="Blog Logo" />
-        <nav>
+        <nav id="desktop-nav">
           <ul id="nav-ul">
-            <li>Daily Digest</li>
-            <li>Design Tools</li>
-            <li>Tutorials</li>
+            <a href="./assets/src/daily.html"><li>Daily Digest</li></a>
+            <a href="./assets/src/design.html"><li>Design Tools</li></a>
+            <a href="./assets/src/tutorial.html"><li>Tutorials</li></a>
             <li>
-              <button class="header-btn">Subscribe</button>
+              <a href="#newsletter-section"
+                ><button class="header-btn">Subscribe</button></a
+              >
             </li>
           </ul>
         </nav>
+        <i class="fa fa-bars" id="menu-icon"></i>
       </header>
     </section>
-
+    <div class="show-nav active">
+      <nav id="mobile-nav">
+        <ul id="nav-ul">
+          <a href="./assets/src/daily.html"><li>Daily Digest</li></a>
+          <a href="./assets/src/design.html"><li>Design Tools</li></a>
+          <a href="./assets/src/tutorial.html"><li>Tutorials</li></a>
+          <a href="#newsletter-section">
+            <li>
+              <button class="header-btn">Subscribe</button>
+            </li>
+          </a>
+        </ul>
+        <i class="fa fa-times" id="close-icon"></i>
+      </nav>
+    </div>
     <section id="hero-section">
       <div>
         <span>👋</span>
@@ -237,7 +258,20 @@
     </section>
     <hr />
     <footer>
-      <p>Copyright2021-Abula Martins Onyemuche</p>
+      <p>Copyright2025-Abula Martins Onyemuche</p>
     </footer>
+    <script>
+      {
+        const menuBar = document.getElementById("menu-icon");
+        const nav = document.getElementsByClassName("show-nav")[0];
+        const closeIcon = document.getElementById("close-icon");
+        menuBar.addEventListener("click", () => {
+          nav.style.display = "block";
+        });
+        closeIcon.addEventListener("click", () => {
+          nav.style.display = "none";
+        });
+      }
+    </script>
   </body>
 </html>
