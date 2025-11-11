@@ -1,0 +1,24 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "description": "Simple Blog to grasp HTML and CSS with Itskillscenter",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./assets/css/index.css -o ./dist/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdmuche/minimal-blog-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdmuche/minimal-blog-template/issues"
+  },
+  "homepage": "https://github.com/mdmuche/minimal-blog-template#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.17",
+    "tailwindcss": "^4.1.17"
+  }
+}
