@@ -1,3 +1,4 @@
+@import "tailwindcss";
 * {
   margin: 0;
   padding: 0;
@@ -38,6 +39,9 @@ header {
   align-items: center;
   margin: 0 auto;
 }
+#mobile-header{
+  display: none;
+}
 #mobile-nav {
   display: none;
 }
@@ -74,7 +78,7 @@ header {
   padding: 8px;
   border-radius: 18px;
   background-color: gray;
-  opacity: 0.4;
+  opacity: 0.2;
   align-self: center;
 }
 
@@ -145,9 +149,20 @@ header {
   width: 28%;
 }
 #newsletter-section {
+  position: relative;
   width: 68%;
   margin: 0 auto;
 }
+#newsletter-section > i.fa-arrow-up{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 30px;
+  background-clip: text;
+  background: linear-gradient(97.1deg, #c41740 4.8%, #ea9c28 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  }
 #newsletter-section h2 {
   background-clip: text;
   background: linear-gradient(97.1deg, #c41740 4.8%, #ea9c28 100%);
@@ -195,12 +210,16 @@ footer {
 }
 /* Responsive Design */
 @media (max-width: 768px) {
-  header {
+  /* header {
+    border: 1px solid red;
     width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: start;
     margin: 0 auto;
+  } */
+  #desktop-header {
+    display: none;
   }
   #menu-icon {
     display: block;
@@ -208,30 +227,45 @@ footer {
   #desktop-nav {
     display: none;
   }
-  div.show-nav {
-    display: none;
-    width: 90%;
-    margin: 0 auto;
+  #mobile-header {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
   }
-  /* div.show-nav.active {
-    display: block;
-  } */
   div.show-nav {
     display: none;
     width: 90%;
     margin: 0 auto;
   }
   #mobile-nav {
-    background-color: gray;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgba(128, 128, 128, 0.402);
     width: 50%;
-    display: flex;
-    justify-content: space-between;
-    /* margin: 0 auto; */
-  }
-  #nav-ul {
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    /* margin: 0 auto; */
+  }
+  i#menu-icon, i#close-icon{
+    font-size: 22px;
+  }
+  #mobile-nav > div {
+    display: flex;
+    justify-content: space-between;
+  }
+  #nav-ul {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     gap: 15px;
+  }
+  #nav-ul > div {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.199);
   }
   #hero-section > h1 {
     font-size: 46px;

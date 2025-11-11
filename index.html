@@ -12,7 +12,7 @@
   </head>
   <body>
     <section id="header-section">
-      <header>
+      <header id="desktop-header">
         <img src="./assets/images/personally-logo.svg" alt="Blog Logo" />
         <nav id="desktop-nav">
           <ul id="nav-ul">
@@ -26,24 +26,34 @@
             </li>
           </ul>
         </nav>
-        <i class="fa fa-bars" id="menu-icon"></i>
       </header>
-    </section>
-    <div class="show-nav active">
+          <header id="mobile-header">
+      <img src="./assets/images/personally-logo.svg" alt="Blog Logo" />
+      <div class="show-nav">
       <nav id="mobile-nav">
+        <div>
+          <img src="./assets/images/personally-logo.svg" alt="Blog Logo" />
+          <i class="fa fa-times" id="close-icon"></i>
+        </div>
         <ul id="nav-ul">
           <a href="./assets/src/daily.html"><li>Daily Digest</li></a>
+          <div></div>
           <a href="./assets/src/design.html"><li>Design Tools</li></a>
+          <div></div>
           <a href="./assets/src/tutorial.html"><li>Tutorials</li></a>
+          <div></div>
           <a href="#newsletter-section">
             <li>
               <button class="header-btn">Subscribe</button>
             </li>
           </a>
         </ul>
-        <i class="fa fa-times" id="close-icon"></i>
       </nav>
     </div>
+    <i class="fa fa-bars" id="menu-icon"></i>
+    </header>
+    </section>
+    
     <section id="hero-section">
       <div>
         <span>👋</span>
@@ -255,6 +265,7 @@
         <input type="email" placeholder="Email address" />
         <button>Subscribe</button>
       </div>
+      <i class="fa fa-arrow-up" id="go-up"></i>
     </section>
     <hr />
     <footer>
@@ -265,12 +276,36 @@
         const menuBar = document.getElementById("menu-icon");
         const nav = document.getElementsByClassName("show-nav")[0];
         const closeIcon = document.getElementById("close-icon");
+        const newsLetterSection = document.getElementById("newsletter-section");
+        const goUP = document.getElementById("go-up");
         menuBar.addEventListener("click", () => {
           nav.style.display = "block";
+          document.getElementById("menu-icon").style.display = 'none';
         });
         closeIcon.addEventListener("click", () => {
           nav.style.display = "none";
+          menuBar.style.display="block"
         });
+       const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            nav.style.display = "none";
+            closeIcon.style.display = "block";
+            if(document.getElementById("mobile-nav")){
+              menuBar.style.display="block";
+            } 
+          
+          }
+        })
+       }, {threshold: 0.4})
+
+       observer.observe(newsLetterSection)
+       goUP.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          })
+       })
       }
     </script>
   </body>
