@@ -163,6 +163,21 @@ header {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   }
+  @media (max-width: 615px) {
+    #newsletter-section{
+      width: 100%;
+    }
+    #newsletter-section > i.fa-arrow-up{
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      font-size: 30px;
+      background-clip: text;
+      background: linear-gradient(97.1deg, #c41740 4.8%, #ea9c28 100%);
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+  }
+  }
 #newsletter-section h2 {
   background-clip: text;
   background: linear-gradient(97.1deg, #c41740 4.8%, #ea9c28 100%);
@@ -306,4 +321,21 @@ footer {
     object-fit: cover;
     border-radius: 8px;
   }
+}
+
+@media (max-width: 425px) {
+  #newsletter-section > div {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#newsletter-section > div button {
+  padding: 0.625rem 5.6rem;
+  border-radius: 5px;
+}
 }
